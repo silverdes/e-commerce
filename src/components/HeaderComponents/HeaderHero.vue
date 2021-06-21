@@ -75,24 +75,21 @@ export default {
 <style scoped>
 .fade-enter-active {
   animation: fade-in 0.5s;
-  position: absolute;
   width: 100%;
   height: auto;
 }
 .fade-leave-active {
   animation: fade-in 0.5s reverse;
-  position: absolute;
   width: 100%;
   height: auto;
+  position: absolute;
 }
 
 @keyframes fade-in {
   0% {
     transform: scale(0);
   }
-  50%{
-    mix-blend-mode: soft-light;
-  }
+  
   100% {
     transform: scale(1);
   }

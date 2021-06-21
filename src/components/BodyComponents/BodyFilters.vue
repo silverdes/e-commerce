@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="relative flex items-center m-1">
-            <input type="checkbox" v-model="colors" value="headphnes" class="absolute top-0 left-0 opacity-0 cursor-pointer h-10 w-20" id="feature4"/>
+            <input type="checkbox" v-model="colors" value="headphones" class="absolute top-0 left-0 opacity-0 cursor-pointer h-10 w-20" id="feature4"/>
             <div class="flex items-center justify-center transition-all px-1 duration-100 ease-in-out">
             <label for="feature4">
                 Headphones
@@ -47,7 +47,7 @@
             <input type="checkbox" v-model="colors" value="smartphones" class="absolute top-0 left-0 opacity-0 cursor-pointer h-10 w-20" id="feature6"/>
             <div class="flex items-center justify-center transition-all px-1 duration-100 ease-in-out">
             <label for="feature6">
-                SmartPhones
+                Smartphones
             </label>
             </div>
         </div>
@@ -55,7 +55,7 @@
             <input type="checkbox" v-model="colors" value="smartwatches" class="absolute top-0 left-0 opacity-0 cursor-pointer h-10 w-20" id="feature7"/>
             <div class="flex items-center justify-center transition-all px-1 duration-100 ease-in-out">
             <label for="feature7">
-                SmartWatches
+                Smartwatches
             </label>
             </div>
         </div>
@@ -70,20 +70,20 @@
   </div>
     <p><strong>Sort By:</strong> <select v-model="sortBy" class="bg-gray-200 text-black p-2 focus:outline-none">
     <option value="name">Product Name</option>
-    <option value="color">Color</option>
-    <option value="size">Size</option>
+    <option value="color">Categories</option>
+    <option value="size">Price</option>
   </select>
   </p>
 </div>
  
-    <div class="grid grid-cols-3 gap-4 mx-20 rounded-2xl mt-10">
-        <div class="rounded-2xl" v-for="(product, index) in computedProducts" :key="index">
-            <div class="flex flex-col shadow-md w-full mx-3 text-center">
-                <img :src="product.image" alt="Denim Jeans" class="object-fill w-full h-full">
-                <h1>{{product.name}}</h1>
-                <p class="text-gray-500 text-6">{{product.size}}</p>
-                <p>{{product.color}}</p>
-                <p><button class="border-none text-white p-3 cursor-pointer text-4 w-full bg-black focus:outline-none hover:opacity-70">Add to Cart</button></p>
+    <div class="grid grid-cols-4 gap-y-10 gap-x-4 mx-20 mt-10 font-rubik">
+        <div v-for="(product, index) in computedProducts" :key="index">
+            <div class="flex flex-col shadow-md w-full mx-3 text-center rounded-2xl border-gray-200 hover:shadow-2xl transition-all ease-in-out duration-300">
+                <img :src="product.image" alt="Denim Jeans" class="object-fill w-full rounded-2xl">
+                <h1 class="text-sm text-gray-700">{{product.name}}</h1>
+                <p class="text-gray-500 text-6 line-throught">{{product.size}}.00 $</p>
+                <p class="capitalize">{{product.color}}</p>
+                <p><button class="border-none text-white p-3 cursor-pointer text-4 w-full bg-orange rounded-b-2xl focus:outline-none hover:bg-orangeRed transition-all ease-in-out duration-300">Add to Cart</button></p>
             </div>
         </div>
     </div>
@@ -98,20 +98,14 @@ export default {
       colors: [],
       sizes: [],
       products: [
-        {name:'test1', color:'tvs', size:'XL', image:'https://demo420.nopcommerce.pl/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg'},
-        {name:'test2', color:'accessories', size:'L', image:'https://demo420.nopcommerce.pl/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg'},
-        {name:'test3', color:'tvs', size:'L', image:'https://demo420.nopcommerce.pl/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg'},
-        {name:'test4', color:'cameras', size:'XL',image:'https://ipt.imgix.net/206731/x/0/5-types-of-cameras-digital.jpg?w=860&h=480&fit=crop&dpr=2&auto=format%2C%20compress&ixlib=react-8.6.4'},
-        {name:'test5', color:'smartwatches', size:'L', image:'https://demo420.nopcommerce.pl/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg'},
-        {name:'test6', color:'smartphones', size:'XL',image:'https://demo420.nopcommerce.pl/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg'},
-        {name:'test7', color:'laptops', size:'L', image:'https://demo420.nopcommerce.pl/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg'},
-        {name:'test6', color:'smartphones', size:'XL',image:'https://demo420.nopcommerce.pl/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg'},
-        {name:'test7', color:'laptops', size:'L', image:'https://demo420.nopcommerce.pl/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg'},
-        {name:'test6', color:'smartphones', size:'XL',image:'https://demo420.nopcommerce.pl/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg'},
-        {name:'test7', color:'laptops', size:'L', image:'https://demo420.nopcommerce.pl/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg'},
-        {name:'test6', color:'smartphones', size:'XL',image:'https://demo420.nopcommerce.pl/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg'},
-        {name:'test7', color:'laptops', size:'L', image:'https://demo420.nopcommerce.pl/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg'},
-        {name:'test7', color:'desktops', size:'L', image:'https://www.hp.com/us-en/shop/app/assets/images/uploads/prod/best-10-hp-desktops-for-everyday-use-21552526779305.png?impolicy=prdimg&imdensity=1&imwidth=600'}
+        {name:'test1', color:'tvs', size:'1500', image:'https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/32/303104/1.jpg?2319'},
+        {name:'test2', color:'accessories', size:'1769', image:'https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/00/015243/1.jpg'},
+        {name:'test4', color:'cameras', size:'1897',image:'https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/72/526753/2.jpg'},
+        {name:'test5', color:'smartwatches', size:'1675', image:'https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/21/787173/1.jpg'},
+        {name:'test7', color:'laptops', size:'2098', image:'https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/09/962114/1.jpg'},
+        {name:'test6', color:'headphones', size:'3004',image:'https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/39/231783/1.jpg?3783'},
+        {name:'test6', color:'smartphones', size:'7092',image:'https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/37/518693/1.jpg?7630'},
+        {name:'Hp Pc - 8Go RAM - 500Go HDD', color:'desktops', size:'7845', image:'https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/98/235014/1.jpg?3976'}
       ],
       sortBy: 'name',
       keyword: ''
@@ -124,7 +118,7 @@ export default {
         (this.colors.length === 0 || this.colors.includes(item.color)) &&
         (this.sizes.length === 0 || this.sizes.includes(item.size))
       }).sort((a, b) => {
-        return a[this.sortBy].toString().localeCompare(b[this.sortBy].toString())
+        return a[this.sortBy].localeCompare(b[this.sortBy])
       })
     }
   }
