@@ -78,10 +78,10 @@
  
     <div class="grid grid-cols-4 gap-y-10 gap-x-4 mx-20 mt-10 font-rubik">
         <div v-for="(product, index) in computedProducts" :key="index">
-            <div class="flex flex-col shadow-md w-full mx-3 text-center rounded-2xl border-gray-200 hover:shadow-2xl transition-all ease-in-out duration-300">
+            <div class="flex flex-col shadow-md w-full mx-3 text-center border rounded-2xl border-gray-200 hover:shadow-2xl transition-all ease-in-out duration-300">
                 <img :src="product.image" alt="Denim Jeans" class="object-fill w-full rounded-2xl">
                 <h1 class="text-sm text-gray-700">{{product.name}}</h1>
-                <p class="text-gray-500 text-6 line-throught">{{product.size}}.00 $</p>
+                <p class="text-gray-500 text-sm line-throught font-semibold">{{product.size}}.00 $</p>
                 <p class="capitalize">{{product.color}}</p>
                 <p><button class="border-none text-white p-3 cursor-pointer text-4 w-full bg-orange rounded-b-2xl focus:outline-none hover:bg-orangeRed transition-all ease-in-out duration-300">Add to Cart</button></p>
             </div>
